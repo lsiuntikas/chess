@@ -359,7 +359,7 @@ export default function Chess() {
     if (!isAiTurn) return;
     setAiThinking(true);
     aiTimerRef.current = setTimeout(() => {
-      const best = findBestMove(pieces, turn, enPassantSq, castlingRights, 3);
+      const best = findBestMove(pieces, turn, enPassantSq, castlingRights, 4);
       if (best) {
         const movingPiece = pieces[key(...best[0])];
         const isPromotion = movingPiece?.type.toLowerCase()==='p' && (best[1][1]===0||best[1][1]===7);
